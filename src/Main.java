@@ -68,6 +68,9 @@ public class Main {
 
     public static int AgeCalc(String date){
         String date1 = CurrDate();
+        String[] mas_date1 = date1.split("\\.");
+        int mas_day = Integer.parseInt(mas_date1[0]);
+        if (mas_day<10) {date1 = "0"+date1;}
         DateTimeFormatter form = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate Startdate = LocalDate.parse(date, form);
         LocalDate Enddate = LocalDate.parse(date1, form);
@@ -88,7 +91,11 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        Interface.MainWindow();
+    }
+}
+    /*public static void main(String[] args) {
         String[] AllMas = {};
         while (true){
         Scanner in = new Scanner(System.in);
@@ -114,4 +121,4 @@ public class Main {
         catch (Exception e){
             System.out.println("Параметры введены некорректно");
         }
-}}
+}}*/
